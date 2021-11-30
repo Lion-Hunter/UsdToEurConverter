@@ -21,7 +21,9 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-
+	implementation("com.squareup.okhttp3:okhttp")
+	implementation ("com.beust:klaxon:5.5")
+	implementation("com.squareup.okhttp3:logging-interceptor")
 }
 
 tasks.withType<KotlinCompile> {
