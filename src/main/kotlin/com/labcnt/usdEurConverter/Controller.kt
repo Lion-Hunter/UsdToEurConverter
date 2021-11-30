@@ -10,12 +10,33 @@ class Controller(private val service: Service) {
     @GetMapping("/UtoE")
     @ResponseBody
     fun convertUsdToEur(@RequestParam param: String): ResponseEntity<Double> {
-        return null
+        val count = param.toDouble()
+        val responseHeaders = HttpHeaders()
+        val result: Double
+
+        try {
+            result = service.convertUsdToEur(count)
+        } catch (e: Exception) {
+            println("API Error: ${e.message}")
+            return ResponseEntity(null, responseHeaders, HttpStatus.INTERNAL_SERVER_ERROR)
+        }
+
+        return ResponseEntity(result, responseHeaders, HttpStatus.OK)
     }
 
     @GetMapping("/EtoU")
-    @ResponseBody
     fun convertEurToUsd(@RequestParam param: String): ResponseEntity<Double> {
-        return null
+        val count = param.toDouble()
+        val responseHeaders = HttpHeaders()
+        val result: Double
+
+        try {
+            result = service.convertEurToUsd(count)
+        } catch (e: Exception) {
+            println("API Error: ${e.message}")
+            return ResponseEntity(null, responseHeaders, HttpStatus.INTERNAL_SERVER_ERROR)
+        }
+
+        return ResponseEntity(result, responseHeaders, HttpStatus.OK)
     }
 }
