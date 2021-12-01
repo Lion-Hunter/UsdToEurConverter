@@ -5,6 +5,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	kotlin("jvm") version "1.6.0"
 	kotlin("plugin.spring") version "1.6.0"
+	id ("com.github.johnrengelman.shadow") version "7.1.0"
 }
 
 group = "com.labcnt"
@@ -33,6 +34,8 @@ tasks.withType<KotlinCompile> {
 	}
 }
 
-tasks.withType<Test> {
-	useJUnitPlatform()
+tasks.withType<Jar> {
+	manifest {
+		attributes["Main-Class"] = "com.labcnt.usdEurConverter.UsdEurConverterApplicationKt"
+	}
 }
