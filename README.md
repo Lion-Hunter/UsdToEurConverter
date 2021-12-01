@@ -1,10 +1,12 @@
 # USD To EUR Converter
 Service for converting dollars into euros and vice versa, taking into account the current exchange rate.
 
+
 ## Starting the service
 To start working with a project, you need to: 
-   1 Build an image by typing ```docker buid -t application .``` 
-   2 Run container by typing ```docker run -it application```
+   - Build an image by typing ```docker buid -t application .``` 
+   - Run container by typing ```docker run -it application```
+
 
 ## Working with the service
 Service requests look like: ```/<request_type>?param=<count>```, where the request type is one of 2 commands:
