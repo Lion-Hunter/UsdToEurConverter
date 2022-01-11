@@ -6,10 +6,8 @@ import okhttp3.Request
 import java.io.IOException
 
 class ApiOpenExchangeRates {
-    private val appId = "22cc04af4d714aa981df2690f6439387"
-    private val client = OkHttpClient()
 
-    fun getUSDtoEUR(): Double {
+    fun getUSDtoEUR(appId: String, client: OkHttpClient): Double {
         val request = Request.Builder()
             .url("https://openexchangerates.org/api/latest.json?app_id=$appId")
             .build()
